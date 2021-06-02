@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleGravity : MonoBehaviour
 {
-    const float gravityConst = 0.1f; // коэффициент гравитации
+    const float gravityConst = 0.15f; // коэффициент гравитации
 
     public GameObject affector; // притягиваемый объект
     private Rigidbody rb;

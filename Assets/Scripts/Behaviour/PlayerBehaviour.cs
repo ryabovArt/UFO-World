@@ -25,7 +25,7 @@ public class PlayerBehaviour : EntitiesBehaviour
             {
                 UFOCrush.current.Crush();
                 playerHealth.currentHP = playerHealth.startHP;
-                print("death");
+                //print("death");
             }
         }
     }

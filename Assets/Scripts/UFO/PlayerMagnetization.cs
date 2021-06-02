@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMagnetization : MonoBehaviour
 {
-    public new Rigidbody rigidbody;
+    public Rigidbody rigidbody;
 
     // фризим позиции, чтобы игрок не съезжал со стартовой платформы
 

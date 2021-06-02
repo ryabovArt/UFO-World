@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UFOMovement : MonoBehaviour
 {
+    [SerializeField] private Joystick joystick_vertical;
+    [SerializeField] private Joystick joystick_horizontal;
+
     [SerializeField] private Rigidbody leftEngineRigidbody;
     [SerializeField] private Rigidbody rightEngineRigidbody;
 
@@ -15,10 +18,9 @@ public class UFOMovement : MonoBehaviour
 
     void Start()
     {
-
         changeTurnSpeed = speed * changeTurnSpeedCoef;
         force = 1;
-        FindingObjects.instance.findingObj.Add(this.gameObject);
+        FindingObjects.instance.findingObj.Add(gameObject);
     }
 
     [System.Obsolete]
@@ -37,6 +39,9 @@ public class UFOMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
+        //float vertical = joystick_vertical.Vertical;
+        //float horizontal = joystick_vertical.Horizontal;
+
         if (horizontal > 0)
         {
             leftEngineRigidbody.AddRelativeForce(Vector3.up * speed * changeTurnSpeed);
@@ -45,7 +50,7 @@ public class UFOMovement : MonoBehaviour
         {
             rightEngineRigidbody.AddRelativeForce(Vector3.up * speed * changeTurnSpeed);
         }
-        else if (vertical > 0)
+        if (vertical > 0)
         {
             leftEngineRigidbody.AddRelativeForce(Vector3.up * speed * force);
             rightEngineRigidbody.AddRelativeForce(Vector3.up * speed * force);
@@ -74,4 +79,49 @@ public class UFOMovement : MonoBehaviour
             Effects.instance.WithoutForce();
         }
     }
+
+    ///// <summary>
+    ///// Ускорение
+    ///// </summary>
+    //public void TurnOnForce()
+    //{
+    //    force = 5f;
+    //    Effects.instance.UseForce();
+    //}
+
+    ///// <summary>
+    ///// Отмена ускорения
+    ///// </summary>
+    //public void TurnOffForce()
+    //{
+    //    force = 2f;
+    //    Effects.instance.WithoutForce();
+    //}
+
+    //public void TurnLeft()
+    //{
+    //    print("left");
+    //    rightEngineRigidbody.AddRelativeForce(Vector3.up * speed * changeTurnSpeed);
+    //}
+
+    //public void TurnRight()
+    //{
+
+    //    leftEngineRigidbody.AddRelativeForce(Vector3.up * speed * changeTurnSpeed);
+    //}
+
+    //public void MoveUp()
+    //{
+    //    leftEngineRigidbody.AddRelativeForce(Vector3.up * speed * force);
+    //    rightEngineRigidbody.AddRelativeForce(Vector3.up * speed * force);
+    //    print("UP");
+    //}
+
+    //public void MoveDown()
+    //{
+    //    leftEngineRigidbody.AddRelativeForce(Vector3.up * -speed * force);
+    //    rightEngineRigidbody.AddRelativeForce(Vector3.up * -speed * force);
+    //}
+
+
 }

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Effects : MonoBehaviour
 {
+    public static Transform particleGO;
+    public static Transform particleGO_2;
+    public static Transform renderer;
+    private GameObject forDestroy;
+
     public static Effects instance;
 
     public List<ParticleSystem> ps = new List<ParticleSystem>();
@@ -38,10 +43,6 @@ public class Effects : MonoBehaviour
 
     public void DestroyBomb()
     {
-        //ps.Add(UFOCheckTrigger.particleGO.GetComponent<ParticleSystem>());
-        //ps.Add(UFOCheckTrigger.particleGO_2.GetComponent<ParticleSystem>());
-        //ps[3].Play();
-        //ps[4].Stop();
         Debug.Log(UFOCheckTrigger.particleGO.transform.position);
         Debug.Log("DestroyBomb");
         //StartCoroutine(BombDestroy());

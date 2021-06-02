@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6414392168394878814}
   - component: {fileID: 1343777573305444206}
+  - component: {fileID: -4259535489282916805}
+  - component: {fileID: 3721020740991223830}
   m_Layer: 0
   m_Name: Asteroid_Small
-  m_TagString: Obstacle
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,12 +41,41 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6414392168394878815}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-4259535489282916805
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414392168394878815}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 10
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &3721020740991223830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6414392168394878815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dc6b71308df9e48a971f1f6d9768ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
 --- !u!1 &6414392169070937587
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +87,6 @@ GameObject:
   - component: {fileID: 6414392169070937586}
   - component: {fileID: 6414392169070937590}
   - component: {fileID: 6414392169070937591}
-  - component: {fileID: 6414392169070937584}
   - component: {fileID: 6414392169070937585}
   m_Layer: 0
   m_Name: Asteroid
@@ -74,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 6414392169070937587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children: []
   m_Father: {fileID: 6414392168394878814}
   m_RootOrder: 0
@@ -126,19 +156,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &6414392169070937584
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6414392169070937587}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &6414392169070937585
 Animator:
   serializedVersion: 3

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 421135874607173112}
   - component: {fileID: 421135874607172996}
   - component: {fileID: 421135874607172999}
-  - component: {fileID: 421135874607172998}
   - component: {fileID: 421135874607173113}
   m_Layer: 0
   m_Name: Asteroid
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 421135874607173115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 421135875478340481}
   m_RootOrder: 0
@@ -81,19 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &421135874607172998
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 421135874607173115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &421135874607173113
 Animator:
   serializedVersion: 3
@@ -123,9 +109,11 @@ GameObject:
   m_Component:
   - component: {fileID: 421135875478340481}
   - component: {fileID: -1379293468364448522}
+  - component: {fileID: -4395530886870325333}
+  - component: {fileID: -2702109609367770704}
   m_Layer: 0
   m_Name: Asteroid_Big
-  m_TagString: Obstacle
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,9 +140,38 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421135875478340480}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.99879646
   m_Center: {x: 0.0016441345, y: 0, z: 0}
+--- !u!54 &-4395530886870325333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421135875478340480}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 10
+  m_AngularDrag: 10
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-2702109609367770704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421135875478340480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dc6b71308df9e48a971f1f6d9768ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10

@@ -7,51 +7,55 @@ public class UFOCheckTrigger : MonoBehaviour
     public static Transform particleGO;
     public static Transform particleGO_2;
     public static Transform renderer;
+    private int checkPointCount;
+    private GameObject forDestroy;
+
+    public List<Transform> checkPoints = new List<Transform>();
+
+    [SerializeField] private GameObject checkDestroy;
+
+    private GameObject chunkPlacer;
+
+    private void Start()
+    {
+        chunkPlacer = GameObject.FindGameObjectWithTag("ChunkPlacer");
+        StartCoroutine(DifferenceBetweenChunksAndCheckpoints());
+    }
+
+    IEnumerator DifferenceBetweenChunksAndCheckpoints()
+    {
+        
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            if (chunkPlacer.GetComponent<ChunkPlacer>().SpawnedChunks[0].EndPoint.transform.position.x < transform.position.x
+                && (chunkPlacer.GetComponent<ChunkPlacer>().ChunkIndex - checkPointCount) > 1)
+            {
+                print("вы пролетели чекпоинт");
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Untagged"))
-        {
-            UFOCrush.current.Crush();
-        }
         if (other.CompareTag("BlackHole"))
         {
             Effects.instance.DestroyBlackHole();
         }
-        if (other.CompareTag("Bomb"))
+        if (other.CompareTag("CheckPoint"))
         {
-            renderer = null;
-            particleGO = null;
-            particleGO_2 = null;
-            particleGO = other.transform.GetChild(2);
-            particleGO_2 = other.transform.GetChild(1);
-            particleGO.GetComponent<ParticleSystem>().Play();
-            particleGO_2.GetComponent<ParticleSystem>().Stop();
-            Effects.instance.DestroyBomb();
-            renderer = other.transform.GetChild(0);
-            renderer.GetComponent<MeshRenderer>().enabled = false;
-            StartCoroutine(EnableMesh());
-        }
-        if (other.CompareTag("Mine"))
-        {
-            Effects.instance.DestroyBlackHole();
-            renderer = null;
-            particleGO = null;
-            particleGO = other.transform.GetChild(1);
-            particleGO.GetComponent<ParticleSystem>().Play();
-            Effects.instance.DestroyBomb();
-            renderer = other.transform.GetChild(0);
-            renderer.GetComponent<MeshRenderer>().enabled = false;
-            StartCoroutine(EnableMesh());
+            checkPoints.Add(other.GetComponent<Transform>().parent);
+            print("add " + checkPoints.Count);
+            other.GetComponentInChildren<MeshRenderer>().enabled = false;
+            other.GetComponentInChildren<BoxCollider>().enabled = false;
+            checkPointCount++;
         }
     }
-
+    
     IEnumerator EnableMesh()
     {
-        yield return new WaitForSeconds(2f);
-        renderer.GetComponent<MeshRenderer>().enabled = true;
-        particleGO.GetComponent<ParticleSystem>().Stop();
-        if (particleGO_2 != null)
-            particleGO_2.GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1f);
+        Destroy(forDestroy);
+        forDestroy = null;
     }
 }

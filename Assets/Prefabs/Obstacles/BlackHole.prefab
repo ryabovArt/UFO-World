@@ -33474,7 +33474,6 @@ GameObject:
   - component: {fileID: 8253766138593268436}
   - component: {fileID: 4808654654060217551}
   - component: {fileID: 6915552495867464120}
-  - component: {fileID: 7490181266130719308}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: BlackHole
@@ -33600,18 +33599,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7490181266130719308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907870474170659723}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51edacff54482244bbe4bbdd097f37f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2961314082242164572
 GameObject:
   m_ObjectHideFlags: 0
@@ -33622,6 +33609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2071533600697115463}
   - component: {fileID: 8447055259793042669}
+  - component: {fileID: 1561668324094522265}
   m_Layer: 0
   m_Name: Dirty_black_hole
   m_TagString: Untagged
@@ -33693,3 +33681,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1561668324094522265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2961314082242164572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52dc6b71308df9e48a971f1f6d9768ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100

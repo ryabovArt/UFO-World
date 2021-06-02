@@ -9,8 +9,20 @@ public class CameraMovement : MonoBehaviour
 
     [SerializeField] private float topBorder;
     [SerializeField] private float bottomBorder;
-    [SerializeField] private float leftBorder;
-    private float rightBorder = float.MaxValue;
+    [SerializeField] private float rightBorder;
+    public float leftBorder;
+
+    public float LeftBorder
+    {
+        get
+        {
+            return leftBorder;
+        }
+        set
+        {
+            leftBorder = value;
+        }
+    }
 
     void Start()
     {
@@ -29,7 +41,7 @@ public class CameraMovement : MonoBehaviour
             Vector3 target = new Vector3()
             {
                 x = player.transform.position.x,
-                y = player.transform.position.y + 21f,
+                y = player.transform.position.y+42f/* + 21f*/,
                 z = transform.position.z
             };
 
@@ -44,9 +56,9 @@ public class CameraMovement : MonoBehaviour
             );
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector2(leftBorder, topBorder), new Vector2(rightBorder, topBorder));
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawLine(new Vector2(leftBorder, topBorder), new Vector2(rightBorder, topBorder));
+    //}
 }

@@ -8,6 +8,9 @@ TagManager:
   - BlackHole
   - Bomb
   - Mine
+  - Asteroid
+  - CheckPoint
+  - ChunkPlacer
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstaclePatrol : MonoBehaviour
 {
     [SerializeField] private Transform[] patrolPoint; // конечные точки патрулирования
-    [SerializeField] private Transform playerTransform;
+    private Transform playerTransform;
 
     [SerializeField] private float speed;
     private float startSpeed;
