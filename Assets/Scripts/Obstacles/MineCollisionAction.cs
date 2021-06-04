@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MineCollisionAction : MonoBehaviour
 {
+    /// <summary>
+    /// Взрыв мины
+    /// </summary>
     public void MineCollisionActions()
     {
-        Effects.instance.DestroyBlackHole();
         CollisionDetection.renderer = null;
         CollisionDetection.particleGO = null;
         CollisionDetection.particleGO = transform.GetChild(1);
@@ -17,6 +19,10 @@ public class MineCollisionAction : MonoBehaviour
         StartCoroutine(EnableMesh());
     }
 
+    /// <summary>
+    /// Уничтожение мины
+    /// </summary>
+    /// <returns></returns>
     IEnumerator EnableMesh()
     {
         yield return new WaitForSeconds(1f);

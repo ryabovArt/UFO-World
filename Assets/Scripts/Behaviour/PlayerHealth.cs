@@ -19,9 +19,6 @@ public class PlayerHealth : Health
         print(currentHP);
 
         if (currentHP > 0) return true;
-        else
-        {
-            return false;
-        }
+        else return false;
     }
 }

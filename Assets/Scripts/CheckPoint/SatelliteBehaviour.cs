@@ -9,6 +9,14 @@ public class SatelliteBehaviour : MonoBehaviour
 
     void Update()
     {
+        RotatingAroundPlanet();
+    }
+
+    /// <summary>
+    /// Врвщение вокруг планеты
+    /// </summary>
+    private void RotatingAroundPlanet()
+    {
         transform.RotateAround(target.transform.position, -Vector3.forward, rotationSpeed * Time.deltaTime);
     }
 }

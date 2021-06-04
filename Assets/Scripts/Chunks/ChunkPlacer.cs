@@ -18,20 +18,19 @@ public class ChunkPlacer : MonoBehaviour
     public List<Chunk> SpawnedChunks { get { return spawnedChunks; } }
 
     private GameObject mainCam;
-    private CameraMovement cam;
-    private float coef; // половина длины чанка
+    private CameraMovement camMovement;
+    public static float chunkHulf; // половина длины чанка
 
     void Start()
     {
-        coef = firstChunk.EndPoint.transform.position.x / 2f;
+        chunkHulf = firstChunk.EndPoint.transform.position.x / 2f;
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
         if (mainCam.TryGetComponent(out CameraMovement cameraMovement))
         {
-            cam = cameraMovement.GetComponent<CameraMovement>();
+            camMovement = cameraMovement.GetComponent<CameraMovement>();
         }
 
         spawnedChunks.Add(firstChunk);
-
         StartCoroutine(AddNewChunk());
     }
     
@@ -45,7 +44,7 @@ public class ChunkPlacer : MonoBehaviour
        
         if (player != null)
         {
-            if (player.position.x > spawnedChunks[spawnedChunks.Count - 1].EndPoint.position.x - 80f)
+            if (player.position.x > spawnedChunks[spawnedChunks.Count - 1].EndPoint.position.x - (chunkHulf * 2))
             {
                 SpawnChunk();
             }
@@ -59,18 +58,6 @@ public class ChunkPlacer : MonoBehaviour
     /// </summary>
     private void SpawnChunk()
     {
-        //int index = Random.Range(0, chunkPrefabs.Length);
-
-        //if(index == lastChunkIndex) index = Random.Range(0, chunkPrefabs.Length);
-
-        //if (index != lastChunkIndex)
-        //{
-        //    lastChunkIndex = index;
-        //    Chunk newChunk = Instantiate(chunkPrefabs[index]);
-        //    newChunk.transform.position = spawnedChunks[spawnedChunks.Count - 1].EndPoint.position - newChunk.StartPoint.localPosition;
-        //    spawnedChunks.Add(newChunk);
-        //}     
-        
         if (chunkIndex < chunkPrefabs.Length)
         {
             Chunk newChunk = Instantiate(chunkPrefabs[chunkIndex]);
@@ -95,7 +82,7 @@ public class ChunkPlacer : MonoBehaviour
     /// </summary>
     private void SetLeftBorder()
     {
-        cam.leftBorder = spawnedChunks[spawnedChunks.Count - 2].StartPoint.position.x + coef;
+        camMovement.leftBorder = spawnedChunks[spawnedChunks.Count - 2].StartPoint.position.x + chunkHulf;
         leftBound.transform.position = new Vector3(spawnedChunks[spawnedChunks.Count - 2].StartPoint.position.x, 10f, 12f);
     }
 }

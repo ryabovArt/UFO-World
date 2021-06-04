@@ -45,6 +45,16 @@ public class UFOCondition : MonoBehaviour
         vel.x = 0;
         vel.y = 0;
 
+        SpawnAfterDeath();
+
+        rbUFO.transform.rotation = Quaternion.identity;
+    }
+
+    /// <summary>
+    /// Спавн игрока после смерти
+    /// </summary>
+    private void SpawnAfterDeath()
+    {
         if (chunkPlacer.GetComponent<ChunkPlacer>().firstChunk != null)
         {
             rbUFO.transform.position = new Vector3(-50.7f, 36.5f, 12.15f);
@@ -59,52 +69,11 @@ public class UFOCondition : MonoBehaviour
                 checkDestroy.GetComponent<UFOCheckTrigger>().checkPoints[checkDestroy.GetComponent<UFOCheckTrigger>().checkPoints.Count - 1].GetComponentInParent<Transform>().position.y + 15f,
                 checkDestroy.GetComponent<UFOCheckTrigger>().checkPoints[checkDestroy.GetComponent<UFOCheckTrigger>().checkPoints.Count - 1].GetComponentInParent<Transform>().position.z
                 );
-                print("1");
             }
             else
             {
-                SceneManager.LoadScene("Forest");
-                print("2");
+                SceneManager.LoadScene(0);
             }
         }
-
-
-
-
-        //if (UFOCheckTrigger.checkPoints.Count > 0)
-        //{
-        //    rbUFO.transform.position = new Vector3
-        //    (
-        //    UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.x,
-        //    UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.y + 15f,
-        //    UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.z
-        //    );
-        //}
-        //else
-        //{
-        //    if (chunkPlacer.GetComponent<ChunkPlacer>().FrstChunk)
-        //    {
-        //        print(!chunkPlacer.GetComponent<ChunkPlacer>().FrstChunk);
-        //        rbUFO.transform.position = new Vector3(-50.7f, 36.5f, 12.15f);
-        //    }
-        //    else
-        //    {
-        //        if (UFOCheckTrigger.checkPoints.Count > 0)
-        //        {
-        //            rbUFO.transform.position = new Vector3
-        //            (
-        //            UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.x,
-        //            UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.y + 15f,
-        //            UFOCheckTrigger.checkPoints[UFOCheckTrigger.checkPoints.Count - 1].GetComponentInParent<Transform>().position.z
-        //            );
-        //        }
-        //        else
-        //        {
-        //            SceneManager.LoadScene("Forest");
-        //        }
-        //    }
-        //}
-
-        rbUFO.transform.rotation = Quaternion.identity;
     }
 }

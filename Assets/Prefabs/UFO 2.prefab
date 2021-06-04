@@ -125,6 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPoints: []
   checkDestroy: {fileID: 0}
+  rightBorder: {fileID: 0}
+  mainCam: {fileID: 0}
+  warning: {fileID: 0}
 --- !u!136 &2171610527550560499
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -38448,7 +38451,7 @@ BoxCollider:
   m_GameObject: {fileID: 2789904750429300881}
   m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.5, y: 1.2677917, z: 6}
   m_Center: {x: 0, y: -2.8661041, z: 0}
@@ -38527,6 +38530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
+  blinkColor: {r: 0.8113208, g: 0.04209684, b: 0.04209684, a: 0.11764706}
 --- !u!1 &2789904750741981481
 GameObject:
   m_ObjectHideFlags: 0
@@ -38537,7 +38541,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2789904750741981482}
   - component: {fileID: 2789904750741981477}
-  - component: {fileID: 2789904750741981476}
   - component: {fileID: 2789904750741981478}
   - component: {fileID: 2789904750741981483}
   m_Layer: 0
@@ -38569,45 +38572,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2789904750741981481}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2789904750741981476
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789904750741981481}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!54 &2789904750741981478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38648,7 +38612,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2789904750891130764}
   - component: {fileID: 2789904750891130771}
-  - component: {fileID: 2789904750891130770}
   - component: {fileID: 2789904750891130769}
   - component: {fileID: 2789904750891130768}
   m_Layer: 0
@@ -38680,45 +38643,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2789904750891130775}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2789904750891130770
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789904750891130775}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!54 &2789904750891130769
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39304,7 +39228,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6357055350880088821}
   m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.50000006
   m_Height: 1.0000001
   m_Direction: 1

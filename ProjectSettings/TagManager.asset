@@ -11,6 +11,7 @@ TagManager:
   - Asteroid
   - CheckPoint
   - ChunkPlacer
+  - RightBorder
   layers:
   - Default
   - TransparentFX

@@ -9,20 +9,8 @@ public class CameraMovement : MonoBehaviour
 
     [SerializeField] private float topBorder;
     [SerializeField] private float bottomBorder;
-    [SerializeField] private float rightBorder;
+    public float rightBorder;
     public float leftBorder;
-
-    public float LeftBorder
-    {
-        get
-        {
-            return leftBorder;
-        }
-        set
-        {
-            leftBorder = value;
-        }
-    }
 
     void Start()
     {
@@ -36,12 +24,20 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        SetCameraPosition();
+    }
+
+    /// <summary>
+    /// Обновляем позицию камеры
+    /// </summary>
+    private void SetCameraPosition()
+    {
         if (player)
         {
             Vector3 target = new Vector3()
             {
                 x = player.transform.position.x,
-                y = player.transform.position.y+42f/* + 21f*/,
+                y = player.transform.position.y + bottomBorder,
                 z = transform.position.z
             };
 
@@ -54,7 +50,7 @@ public class CameraMovement : MonoBehaviour
             Mathf.Clamp(transform.position.y, bottomBorder, topBorder),
             transform.position.z
             );
-    }
+    }    
 
     //private void OnDrawGizmos()
     //{

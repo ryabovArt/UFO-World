@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BombCollisionAction : MonoBehaviour
 {
+    /// <summary>
+    /// Взрыв бомбы
+    /// </summary>
     public void BombCollisionActions()
     {
         print("collis");
@@ -20,6 +23,10 @@ public class BombCollisionAction : MonoBehaviour
         StartCoroutine(EnableMesh());
     }
 
+    /// <summary>
+    /// Уничтожение бомбы
+    /// </summary>
+    /// <returns></returns>
     IEnumerator EnableMesh()
     {
         yield return new WaitForSeconds(1f);

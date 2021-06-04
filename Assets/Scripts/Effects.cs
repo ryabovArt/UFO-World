@@ -7,7 +7,6 @@ public class Effects : MonoBehaviour
     public static Transform particleGO;
     public static Transform particleGO_2;
     public static Transform renderer;
-    private GameObject forDestroy;
 
     public static Effects instance;
 
@@ -19,6 +18,9 @@ public class Effects : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Эффект ускорения
+    /// </summary>
     [System.Obsolete]
     public void UseForce()
     {
@@ -30,6 +32,9 @@ public class Effects : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Отключение эффекта ускорения
+    /// </summary>
     [System.Obsolete]
     public void WithoutForce()
     {
@@ -39,24 +44,5 @@ public class Effects : MonoBehaviour
             var em = ps[i].emission;
             em.rateOverTime = 4;
         }
-    }
-
-    public void DestroyBomb()
-    {
-        Debug.Log(UFOCheckTrigger.particleGO.transform.position);
-        Debug.Log("DestroyBomb");
-        //StartCoroutine(BombDestroy());
-    }
-    IEnumerator BombDestroy()
-    {
-        yield return new WaitForSeconds(2f);
-        ps[3].Stop();
-        ps[4].Play();
-        UFOCheckTrigger.renderer.GetComponent<MeshRenderer>().enabled = true;
-    }
-
-    public void DestroyBlackHole()
-    {
-        Debug.Log("DestroyBlackHole");
     }
 }
