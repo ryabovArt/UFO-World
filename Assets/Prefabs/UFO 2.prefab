@@ -38413,6 +38413,12 @@ GameObject:
   - component: {fileID: 2171610527246425456}
   - component: {fileID: 1400729523}
   - component: {fileID: 1400729524}
+  - component: {fileID: 1400729525}
+  - component: {fileID: 2154410975050146637}
+  - component: {fileID: 7131232793075118058}
+  - component: {fileID: 6969423405621525437}
+  - component: {fileID: 3855424280334322282}
+  - component: {fileID: 9106693609033635386}
   m_Layer: 0
   m_Name: UFO 2
   m_TagString: Player
@@ -38451,7 +38457,7 @@ BoxCollider:
   m_GameObject: {fileID: 2789904750429300881}
   m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.5, y: 1.2677917, z: 6}
   m_Center: {x: 0, y: -2.8661041, z: 0}
@@ -38483,12 +38489,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b754e8d3496e8f45b89801e43a5adfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick_vertical: {fileID: 0}
-  joystick_horizontal: {fileID: 0}
-  leftEngineRigidbody: {fileID: 2789904750741981478}
-  rightEngineRigidbody: {fileID: 2789904750891130769}
-  speed: 28
-  changeTurnSpeedCoef: 0.1
+  turnRight: {fileID: 1400729525}
+  turnLeft: {fileID: 2154410975050146637}
+  moveUp: {fileID: 7131232793075118058}
+  moveDown: {fileID: 6969423405621525437}
+  activateForce: {fileID: 3855424280334322282}
+  deactivateForce: {fileID: 9106693609033635386}
 --- !u!114 &2171610527246425456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38531,6 +38537,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   blinkColor: {r: 0.8113208, g: 0.04209684, b: 0.04209684, a: 0.11764706}
+--- !u!114 &1400729525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348aae8549c9ca1448eb4e6ac99620e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 2789904750741981478}
+  rightEngineRigidbody: {fileID: 2789904750891130769}
+  speed: 28
+  changeTurnSpeedCoef: 0.2
+--- !u!114 &2154410975050146637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99a6ee3e717d9840ae3180bdbad85d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 2789904750741981478}
+  rightEngineRigidbody: {fileID: 2789904750891130769}
+  speed: 28
+  changeTurnSpeedCoef: 0.2
+--- !u!114 &7131232793075118058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0186291a1c8f6946953991955895ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 2789904750741981478}
+  rightEngineRigidbody: {fileID: 2789904750891130769}
+  speed: 28
+  changeTurnSpeedCoef: 0.2
+--- !u!114 &6969423405621525437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dbcbee3c7ff7c74d81e5eb6b315ecd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 2789904750741981478}
+  rightEngineRigidbody: {fileID: 2789904750891130769}
+  speed: 28
+  changeTurnSpeedCoef: 0.2
+--- !u!114 &3855424280334322282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f08af269e5c1974983c31ae62dfa0a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 0}
+  rightEngineRigidbody: {fileID: 0}
+  speed: 0
+  changeTurnSpeedCoef: 0
+--- !u!114 &9106693609033635386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789904750429300881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1758b44b92737414699d18b198c7d631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftEngineRigidbody: {fileID: 0}
+  rightEngineRigidbody: {fileID: 0}
+  speed: 0
+  changeTurnSpeedCoef: 0
 --- !u!1 &2789904750741981481
 GameObject:
   m_ObjectHideFlags: 0
@@ -39228,7 +39330,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6357055350880088821}
   m_Material: {fileID: 13400000, guid: a1491d0718fa5e8449f6fae8ab0bd82e, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.50000006
   m_Height: 1.0000001
   m_Direction: 1

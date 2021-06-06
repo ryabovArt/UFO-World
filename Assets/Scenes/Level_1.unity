@@ -121,18 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &2715095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 1886330533}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &2715096 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -1630,7 +1618,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2630
+  m_Name: pb_Mesh-1294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1983,18 +1971,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 759113605}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1646778968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
-    type: 3}
-  m_PrefabInstance: {fileID: 759113605}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,10 +2800,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1078069628, guid: dbd254eea80964343b2a09f05520d9b0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1555076884809624656, guid: dbd254eea80964343b2a09f05520d9b0,
         type: 3}
       propertyPath: mainCam
@@ -2863,16 +2835,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1074286542}
-    - target: {fileID: 2789904750429300876, guid: dbd254eea80964343b2a09f05520d9b0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789904750429300876, guid: dbd254eea80964343b2a09f05520d9b0,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2789904750429300881, guid: dbd254eea80964343b2a09f05520d9b0,
         type: 3}
       propertyPath: m_Name
@@ -2933,16 +2895,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8702916827667392683, guid: dbd254eea80964343b2a09f05520d9b0,
-        type: 3}
-      propertyPath: joystick_vertical
-      value: 
-      objectReference: {fileID: 1646778968}
-    - target: {fileID: 8702916827667392683, guid: dbd254eea80964343b2a09f05520d9b0,
-        type: 3}
-      propertyPath: joystick_horizontal
-      value: 
-      objectReference: {fileID: 2715095}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd254eea80964343b2a09f05520d9b0, type: 3}
 --- !u!198 &4077068083343847052 stripped
