@@ -6,7 +6,7 @@ public class DeactivateForce : BaseMoveInput, ICommand
 {
     public void Execute()
     {
-        Force = 4f;
+        force = 2f;
         Effects.instance.WithoutForce();
     }
 }

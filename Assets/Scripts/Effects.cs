@@ -21,6 +21,7 @@ public class Effects : MonoBehaviour
     /// <summary>
     /// Эффект ускорения
     /// </summary>
+    [System.Obsolete]
     public void UseForce()
     {
         for (int i = 0; i < 2; i++)
@@ -34,6 +35,7 @@ public class Effects : MonoBehaviour
     /// <summary>
     /// Отключение эффекта ускорения
     /// </summary>
+    [System.Obsolete]
     public void WithoutForce()
     {
         for (int i = 0; i < 2; i++)

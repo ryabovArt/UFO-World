@@ -6,7 +6,12 @@ public class MoveDown : BaseMoveInput, ICommand
 {
     public void Execute()
     {
-        LeftEngineRigidbody.AddRelativeForce(Vector3.up * -Speed * Force);
-        RightEngineRigidbody.AddRelativeForce(Vector3.up * -Speed * Force);
+        maxForce = Vector3.up * -Speed * Force;
+
+        LeftEngineRigidbody.AddRelativeForce(maxForce);
+        RightEngineRigidbody.AddRelativeForce(maxForce);
+
+        leftSlider.fillAmount -= sliderStep * Time.deltaTime;
+        rightSlider.fillAmount -= sliderStep * Time.deltaTime;
     }
 }

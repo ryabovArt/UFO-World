@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseMoveInput : MonoBehaviour
 {
+    public Image leftSlider;
+    public Image rightSlider;
+    public float sliderStep;
+
     // инкапсулируем поля
     public Rigidbody LeftEngineRigidbody => leftEngineRigidbody;
     public Rigidbody RightEngineRigidbody => rightEngineRigidbody;
@@ -18,8 +23,10 @@ public class BaseMoveInput : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float changeTurnSpeedCoef;
 
-    [SerializeField] private float force;
+    protected float force;
     protected float changeTurnSpeed;
+
+    protected Vector3 maxForce;
 
     void Start()
     {

@@ -6,6 +6,10 @@ public class TurnLeft : BaseMoveInput, ICommand
 {
     public void Execute()
     {
-        LeftEngineRigidbody.AddRelativeForce(Vector3.up * Speed * changeTurnSpeed);
+        maxForce = Vector3.up * Speed * changeTurnSpeed;
+
+        LeftEngineRigidbody.AddRelativeForce(maxForce);
+        leftSlider.fillAmount -= sliderStep * Time.deltaTime;
+        rightSlider.fillAmount += sliderStep * Time.deltaTime;
     }
 }

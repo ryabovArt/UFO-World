@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UFOMovement : MonoBehaviour
+public class UFOMovement : BaseMoveInput
 {
     [SerializeField] private TurnRight turnRight;
     [SerializeField] private TurnLeft turnLeft;
@@ -10,8 +11,6 @@ public class UFOMovement : MonoBehaviour
     [SerializeField] private MoveDown moveDown;
     [SerializeField] private ActivateForce activateForce;
     [SerializeField] private DeactivateForce deactivateForce;
-
-    BaseMoveInput baseMoveInput;
 
     private ICommand turnRightCommand;
     private ICommand turnLeftCommand;
@@ -28,8 +27,6 @@ public class UFOMovement : MonoBehaviour
         moveDownCommand = moveDown;
         activateForceCommand = activateForce;
         deactivateForceCommand = deactivateForce;
-
-        baseMoveInput = GetComponent<BaseMoveInput>();
     }
 
     [System.Obsolete]
@@ -38,7 +35,6 @@ public class UFOMovement : MonoBehaviour
         PlayerController();
 
         AddForce();
-        
     }
 
     /// <summary>
@@ -68,6 +64,12 @@ public class UFOMovement : MonoBehaviour
         {
             moveDownCommand.Execute();
         }
+        else if (horizontal == 0 && vertical == 0)
+        {
+            leftSlider.fillAmount -= sliderStep * Time.deltaTime;
+            rightSlider.fillAmount -= sliderStep * Time.deltaTime;
+        }
+        
     }
 
     /// <summary>
@@ -79,12 +81,12 @@ public class UFOMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             activateForceCommand.Execute();
-            print(baseMoveInput.Force);
+            print(Force);
         }
         else
         {
             deactivateForceCommand.Execute();
-            print(baseMoveInput.Force);
+            print(Force);
         }
     }
 

@@ -12,6 +12,8 @@ TagManager:
   - CheckPoint
   - ChunkPlacer
   - RightBorder
+  - LeftSlider
+  - RightSlider
   layers:
   - Default
   - TransparentFX
