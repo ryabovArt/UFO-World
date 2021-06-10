@@ -16,20 +16,17 @@ public class Speedometer : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-        float currentRotation = arrow.localEulerAngles.z;
-
         if (horizontal > 0)
         {
             arrow.localEulerAngles =
-            new Vector3(0, 0, Mathf.Lerp(maxValueArrowAngle, currentRotation, speed * Time.deltaTime));
-            print("currentRotation " + horizontal);
+            new Vector3(0, 0, Mathf.MoveTowards(arrow.localEulerAngles.z, 0, speed * Time.deltaTime));
         }
         else if (horizontal < 0)
         {
             arrow.localEulerAngles =
-            new Vector3(0, 0, Mathf.Lerp(minValueArrowAngle, currentRotation, speed * Time.deltaTime));
+            new Vector3(0, 0, Mathf.MoveTowards(arrow.localEulerAngles.z, minValueArrowAngle, speed * Time.deltaTime));
         }
-        else if (horizontal == 0) arrow.localEulerAngles = new Vector3(0, 0, Mathf.Lerp(0, currentRotation, speed * Time.deltaTime));
-        
+        else if (horizontal == 0) arrow.localEulerAngles = new Vector3(0, 0, Mathf.MoveTowards(arrow.localEulerAngles.z, 90, speed * Time.deltaTime));
+
     }
 }

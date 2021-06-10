@@ -80,13 +80,17 @@ public class UFOMovement : BaseMoveInput
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            activateForceCommand.Execute();
-            print(Force);
+            //activateForceCommand.Execute();
+            //print(Force);
+            Force = 8f;
+            Effects.instance.UseForce();
         }
         else
         {
-            deactivateForceCommand.Execute();
-            print(Force);
+            //deactivateForceCommand.Execute();
+            //print(Force);
+            Force = 2f;
+            Effects.instance.WithoutForce();
         }
     }
 
